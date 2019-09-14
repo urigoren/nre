@@ -1,6 +1,11 @@
 # Nice Regular Expressions
+A simple wrapper around the `re` module that supports multiple patterns, and reuse of patterns.
 
-A simple wrapper around the `re` module that supports reuse of patterns.
+## Installation
+
+    pip install nre
+   
+## Usage
 
     import nre
     patterns = nre.from_string(r'''
