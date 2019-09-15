@@ -44,7 +44,7 @@ def validate(lines):
 
 def from_string(content, title=""):
     if type(content) == str:
-        lines = [line.strip() for line in content.split("\n") if any(line.strip())]
+        lines = [line.strip() for line in content.split("\n") if any(line.strip()) and not line.strip().startswith("#")]
     elif type(content) == list:
         lines = content
     else:
@@ -79,7 +79,7 @@ def read_imports(file_name):
             line = line.strip()
             if line.startswith("import "):
                 content.extend(read_imports(line[7:].strip()))
-            else:
+            elif not line.startswith("#"):
                 content.append(line)
     return content
 
