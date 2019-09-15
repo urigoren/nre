@@ -1,4 +1,5 @@
 import os
+from glob import glob
 try:
     import regex as re
 except ImportError:
@@ -72,7 +73,8 @@ def from_string(content, title=""):
 
 def read_imports(file_name):
     if not os.path.exists(file_name):
-        file_name += '.nre'
+        file_names = glob(file_name+'.nre')+glob('../*/'+file_name+'.nre')+glob("*/"+file_name+'.nre')+glob("*/*/"+file_name+'.nre')
+        file_name = file_names[0] if any(file_names) else file_name
     content = []
     with open(file_name, 'r') as f:
         for line in f:
