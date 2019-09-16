@@ -75,7 +75,7 @@ def read_imports(file_name):
     if not os.path.exists(file_name):
         #smart-search for nre files
         f = file_name if '.nre' in file_name else file_name + '.nre'
-        file_names = glob(f)+glob('../*/'+f)+glob("*/"+f)+glob("../../*/*/"+f)+glob("*/*/"+f)
+        file_names = glob(f)+glob('../*/'+f)+glob("*/"+f)+glob("../../*/"+f)+glob("../../*/*/"+f)+glob("*/*/"+f)
         if not any(file_names):
             raise FileNotFoundError(file_name)
         file_name = file_names[0] 
