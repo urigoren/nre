@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name='nre',
   packages = ['nre'],
-  version = '0.12',
+  version = '0.13',
   description = 'Nice Regular Expressions',
   author = 'Uri Goren',
   author_email = 'uri@goren.ml',
